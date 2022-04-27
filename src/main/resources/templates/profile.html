@@ -1,0 +1,10 @@
+<html xmlns:th = "http://www.thymeleaf.org"
+      xmlns:layout = "http://ultraq.net.nz/thymeleaf/layout" layout:decorator = "layout/main.html">
+<div layout:fragment = "site_content">
+    <div class="row mt-5">
+        <div class="col-12">
+            <h3 class="display-1 text-center">Welcome <span th:text="${currentUser.fullName}"></span></h3>
+        </div>
+    </div>
+</div>
+</html>

@@ -1,0 +1,31 @@
+<html xmlns:th = "http://www.thymeleaf.org"
+      xmlns:layout = "http://ultraq.net.nz/thymeleaf/layout" layout:decorator = "layout/main.html">
+    <div layout:fragment = "site_content">
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <table class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th th:text="#{label.name}"></th>
+                        <th th:text="#{label.price}"></th>
+                        <th th:text="#{label.amount}"></th>
+                        <th width="10%">DETAILS</th>
+                    </tr>
+                    </thead>
+
+                    <tbody>
+                    <tr th:each="it : ${tovary}">
+                        <td th:text="${it.id}"></td>
+                        <td th:text="${it.name}"></td>
+                        <td th:text="${it.price}"></td>
+                        <td th:text="${it.amount}"></td>
+                        <td><a th:href="@{'/details/' + ${it.id}}" class="btn btn-info btn-sm">DETAILS</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</html>
