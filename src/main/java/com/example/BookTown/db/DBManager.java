@@ -1,4 +1,4 @@
-package com.example.Beksi_Book.db;
+package com.example.BookTown.db;
 
 import java.util.ArrayList;
 

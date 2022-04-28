@@ -1,10 +1,10 @@
-package com.example.Beksi_Book.services.impl;
+package com.example.BookTown.services.impl;
 
-import com.example.Beksi_Book.entities.Roles;
-import com.example.Beksi_Book.entities.Users;
-import com.example.Beksi_Book.repositories.RoleRepository;
-import com.example.Beksi_Book.repositories.UserRepository;
-import com.example.Beksi_Book.services.UserService;
+import com.example.BookTown.entities.Roles;
+import com.example.BookTown.entities.Users;
+import com.example.BookTown.repositories.RoleRepository;
+import com.example.BookTown.repositories.UserRepository;
+import com.example.BookTown.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

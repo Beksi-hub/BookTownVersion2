@@ -1,6 +1,6 @@
-package com.example.Beksi_Book.repositories;
+package com.example.BookTown.repositories;
 
-import com.example.Beksi_Book.entities.ShopItems;
+import com.example.BookTown.entities.ShopItems;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

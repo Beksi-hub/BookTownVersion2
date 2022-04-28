@@ -1,11 +1,9 @@
-package com.example.Beksi_Book.entities;
+package com.example.BookTown.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import net.bytebuddy.dynamic.loading.InjectionClassLoader;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.GrantedAuthoritiesContainer;
 
 import javax.persistence.*;
 

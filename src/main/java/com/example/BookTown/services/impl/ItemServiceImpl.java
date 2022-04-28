@@ -1,8 +1,8 @@
-package com.example.Beksi_Book.services.impl;
+package com.example.BookTown.services.impl;
 
-import com.example.Beksi_Book.repositories.ShopItemRepository;
-import com.example.Beksi_Book.services.ItemService;
-import com.example.Beksi_Book.entities.ShopItems;
+import com.example.BookTown.repositories.ShopItemRepository;
+import com.example.BookTown.services.ItemService;
+import com.example.BookTown.entities.ShopItems;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

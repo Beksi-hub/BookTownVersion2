@@ -1,4 +1,4 @@
-package com.example.Beksi_Book.controllers;
+package com.example.BookTown.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

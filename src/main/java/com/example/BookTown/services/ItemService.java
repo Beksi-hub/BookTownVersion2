@@ -1,7 +1,7 @@
 
-package com.example.Beksi_Book.services;
+package com.example.BookTown.services;
 
-import com.example.Beksi_Book.entities.ShopItems;
+import com.example.BookTown.entities.ShopItems;
 
 import java.util.List;
 

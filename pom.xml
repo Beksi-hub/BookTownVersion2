@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>Beksi_Book</artifactId>
+	<artifactId>BookTown</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Beksi_Book</name>
-	<description>Beksi project for Spring Boot</description>
+	<name>BookTown</name>
+	<description>BookTown project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>

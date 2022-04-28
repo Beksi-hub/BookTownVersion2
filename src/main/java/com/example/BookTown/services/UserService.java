@@ -1,6 +1,6 @@
-package com.example.Beksi_Book.services;
+package com.example.BookTown.services;
 
-import com.example.Beksi_Book.entities.Users;
+import com.example.BookTown.entities.Users;
 import org.springframework.security.core.userdetails.UserDetailsService;
 
 public interface UserService extends UserDetailsService {

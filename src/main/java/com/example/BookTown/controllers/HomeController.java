@@ -1,11 +1,9 @@
-package com.example.Beksi_Book.controllers;
+package com.example.BookTown.controllers;
 
-import com.example.Beksi_Book.db.DBManager;
-import com.example.Beksi_Book.db.Items;
-import com.example.Beksi_Book.entities.ShopItems;
-import com.example.Beksi_Book.entities.Users;
-import com.example.Beksi_Book.services.ItemService;
-import com.example.Beksi_Book.services.UserService;
+import com.example.BookTown.entities.ShopItems;
+import com.example.BookTown.entities.Users;
+import com.example.BookTown.services.ItemService;
+import com.example.BookTown.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
@@ -16,10 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import static sun.management.snmp.util.JvmContextFactory.getUserData;
 
 @Controller
 public class HomeController {

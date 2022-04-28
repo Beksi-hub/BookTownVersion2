@@ -1,4 +1,4 @@
-package com.example.Beksi_Book.config;
+package com.example.BookTown.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

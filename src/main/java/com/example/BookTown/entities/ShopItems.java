@@ -1,4 +1,4 @@
-package com.example.Beksi_Book.entities;
+package com.example.BookTown.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
