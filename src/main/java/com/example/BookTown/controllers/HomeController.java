@@ -41,6 +41,12 @@ public class HomeController {
         return "about";
     }
 
+    /*@GetMapping(value = "/log-in-sign-up")
+    public String index_2(Model model) {
+        model.addAttribute("currentUser", getUserData());
+        return "log-in-sign-up";
+    }*/
+
     @PostMapping(value = "/additem")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MODERATOR')")
     public String addItem(@RequestParam(name = "item_name", defaultValue = "No Item") String name,
