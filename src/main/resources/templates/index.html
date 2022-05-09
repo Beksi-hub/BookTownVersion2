@@ -1,6 +1,23 @@
 <html xmlns:th = "http://www.thymeleaf.org"
       xmlns:layout = "http://ultraq.net.nz/thymeleaf/layout" layout:decorator = "layout/main.html">
-    <div layout:fragment = "site_content">
+
+<head>
+  <!--<link th:href="@{'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css'}" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script th:src="@{'https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js'}" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script th:src="@{'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js'}" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+-->
+    <script th:src="@{/assets/js/script.js}"></script>
+
+    <!--
+      - ionicon link
+    -->
+    <script type="module" th:src="@{'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'}"></script>
+    <script nomodule th:src="@{'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'}"></script>
+
+
+</head>
+
+    <!--<div layout:fragment = "site_content">
 
         <div class="row mt-5">
             <div class="col-12">
@@ -27,5 +44,797 @@
                 </table>
             </div>
         </div>
-    </div>
+    </div>-->
+
+<main layout:fragment = "site_content">
+
+    <!--
+      - #HOME SECTION
+    -->
+
+    <section class="home" id="home">
+
+        <div class="deco-shape shape-1">
+            <img src="./assets/images/shape-1.png" alt="art shape" width="70">
+        </div>
+        <div class="deco-shape shape-2">
+            <img src="./assets/images/shape-2.png" alt="art shape" width="55">
+        </div>
+        <div class="deco-shape shape-3">
+            <img src="./assets/images/shape-3.png" alt="art shape" width="120">
+        </div>
+        <div class="deco-shape shape-4">
+            <img src="./assets/images/shape-4.png" alt="art shape" width="30">
+        </div>
+
+        <div class="home-left">
+
+            <p class="section-subtitle">Welcome To Online Bookstore</p>
+
+            <h1 class="main-heading">
+                WHAT BOOK WILL YOU
+                <span class="underline-img">CHOOSE? <img src="./assets/images/banner-line.png" alt="line"></span>
+            </h1>
+
+            <p class="section-text">
+                Buy books online at BOOKTOWN.com, your favorite bookstore. Whatever you love, from fiction, science fiction and more. BOOKTOWN has the perfect book for you.
+            </p>
+
+            <div class="home-btn-group">
+                <button class="btn btn-primary" onclick="window.location.href='#genres'">
+                    <p class="btn-text">Explore Genres</p>
+                    <span class="square"></span>
+                </button>
+
+                <button class="btn btn-secondary">
+                    <p class="btn-text" onclick="window.location.href='#contact'">Contact Us</p>
+                    <span class="square"></span>
+                </button>
+            </div>
+
+        </div>
+
+        <div class="home-right">
+
+            <div class="img-box">
+
+                <img src="./assets/images/banner-img-bg.png" alt="colorful background shape" class="background-shape">
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!--
+      - #COURSE CATEGORY SECTION
+    -->
+
+    <section class="category" id="genres">
+
+        <p class="section-subtitle">BOOK GENRES</p>
+
+        <h2 class="section-title">Explore Popular Genres</h2>
+
+        <ul class="course-item-group">
+
+            <li class="course-category-item">
+
+                <div class="wrapper">
+                    <img src="./assets/images/1.gif" alt="category icon" class="category-icon default">
+
+                    <img src="./assets/images/1.gif" alt="category icon white"
+                         class="category-icon hover">
+                </div>
+
+                <div class="course-category-content">
+                    <h3 class="category-title">
+                        <a href="#">Action</a>
+                    </h3>
+
+                    <p class="category-subtitle">Action is a genre of action-packed literature, by analogy with the cinematic genre, full of fights, gunfights and chases.</p>
+                </div>
+
+            </li>
+
+
+            <li class="course-category-item">
+
+                <div class="wrapper">
+                    <img src="./assets/images/4.gif" alt="category icon" class="category-icon default">
+
+                    <img src="./assets/images/4.gif" alt="category icon white"
+                         class="category-icon hover">
+                </div>
+
+                <div class="course-category-content">
+                    <h3 class="category-title">
+                        <a href="#">Detective</a>
+                    </h3>
+
+                    <p class="category-subtitle">Detective is a literary genre whose works describe the process of investigating a mysterious incident in order to solve the mystery.</p>
+                </div>
+
+            </li>
+
+
+            <li class="course-category-item">
+
+                <div class="wrapper">
+                    <img src="./assets/images/5.gif" alt="category icon" class="category-icon default">
+
+                    <img src="./assets/images/5.gif" alt="category icon white"
+                         class="category-icon hover">
+                </div>
+
+                <div class="course-category-content">
+                    <h3 class="category-title">
+                        <a href="#">Comedy</a>
+                    </h3>
+
+                    <p class="category-subtitle">The comedy genre is made up of books about a series of funny or comical events or scenes that are intended to make the reader laugh.</p>
+                </div>
+
+            </li>
+
+
+            <li class="course-category-item">
+
+                <div class="wrapper">
+                    <img src="./assets/images/2.gif" alt="category icon" class="category-icon default">
+
+                    <img src="./assets/images/2.gif" alt="category icon white"
+                         class="category-icon hover">
+                </div>
+
+                <div class="course-category-content">
+                    <h3 class="category-title">
+                        <a href="#">Fantasy</a>
+                    </h3>
+
+                    <p class="category-subtitle">Fantasy is based on the use of mythological and fairy-tale motifs in a modern form.</p>
+                </div>
+
+            </li>
+
+
+            <li class="course-category-item">
+
+                <div class="wrapper">
+                    <img src="./assets/images/3.gif" alt="category icon" class="category-icon default">
+
+                    <img src="./assets/images/3.gif" alt="category icon white"
+                         class="category-icon hover">
+                </div>
+
+                <div class="course-category-content">
+                    <h3 class="category-title">
+                        <a href="#">Love novels</a>
+                    </h3>
+
+                    <p class="category-subtitle">A romance novel or romantic novel generally refers to a type of genre fiction novel which places its primary focus on the relationship and romantic love between two people.</p>
+                </div>
+
+            </li>
+
+
+            <li class="course-category-item">
+
+                <div class="wrapper">
+                    <img src="./assets/images/7.gif" alt="category icon" class="category-icon default">
+
+                    <img src="./assets/images/7.gif" alt="category icon white"
+                         class="category-icon hover">
+                </div>
+
+                <div class="course-category-content">
+                    <h3 class="category-title">
+                        <a href="#">Adventures</a>
+                    </h3>
+
+                    <p class="category-subtitle">The adventure genre consists of books where the protagonist goes on an epic journey, either personally or geographically.</p>
+                </div>
+
+            </li>
+
+        </ul>
+
+    </section>
+
+
+
+
+
+    <!--
+      - #ABOUT SECTION
+    -->
+
+    <section class="about" id="about">
+
+        <div class="about-left">
+
+            <div class="img-box">
+
+                <img src="./assets/images/7777.jpeg" alt="about person" class="about-img">
+
+            </div>
+
+        </div>
+
+        <div class="about-right">
+
+            <p class="section-subtitle">About Us</p>
+
+            <h2 class="section-title">We Have Best Online Bookstore</h2>
+
+            <p class="section-text">
+                An Online Bookstore is an online web application where the customer can purchase books online. An online bookstore software project that acts as a central database containing various books in stock along with their title, author, and cost. A user visiting the website can see a wide range of books arranged in respective categories. Through a web browser, the customers can search for a book by its title or author.
+            </p>
+
+            <ul class="about-ul">
+
+                <li>
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                    <p>World Authors</p>
+                </li>
+
+                <li>
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                    <p>Bestsellers</p>
+                </li>
+
+                <li>
+                    <ion-icon name="checkmark-circle"></ion-icon>
+                    <p>Huge Choice</p>
+                </li>
+
+            </ul>
+
+            <button class="btn btn-primary">
+                <p class="btn-text">Explore More</p>
+                <span class="square"></span>
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!--
+      - #COURSE SECTION
+    -->
+
+    <section class="course" id="course">
+
+        <p class="section-subtitle">Our Best Books</p>
+
+        <h2 class="section-title">The best bookstore in the country</h2>
+
+        <div class="course-grid">
+
+            <div class="course-card">
+
+                <div class="course-banner">
+                    <img src="./assets/images/sea.jpg" alt="course banner">
+
+                    <div class="course-tag-box">
+                        <a href="#" class="badge-tag orange"><h5>Add to Favorites</h5></a>
+                        <a href="#" class="badge-tag blue"><h5>Add to Basket</h5></a>
+                    </div>
+                </div>
+
+                <div class="course-content">
+
+                    <h3 class="card-title">
+                        <a href="#">Sea of Tranquility</a>
+                    </h3>
+
+                    <div class="wrapper border-bottom">
+
+                        <div class="author">
+
+                            <a href="#" class="author-name">Emily St. John Mandel</a>
+                        </div>
+
+
+                    </div>
+
+                    <div class="wrapper">
+                        <div class="course-price">$50.00</div>
+
+                        <div class="enrolled">
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-banner">
+                    <img src="./assets/images/one.jpg" alt="course banner">
+
+                    <div class="course-tag-box">
+                        <a href="#" class="badge-tag orange"><h5>Add to Favorites</h5></a>
+                        <a href="#" class="badge-tag blue"><h5>Add to Basket</h5></a>
+                    </div>
+                </div>
+
+                <div class="course-content">
+
+                    <h3 class="card-title">
+                        <a href="#">One Italian Summer</a>
+                    </h3>
+
+                    <div class="wrapper border-bottom">
+
+                        <div class="author">
+
+                            <a href="#" class="author-name">Rebecca Serle</a>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="wrapper">
+                        <div class="course-price">$80.00</div>
+
+                        <div class="enrolled">
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-banner">
+                    <img src="./assets/images/mem.jpg" alt="course banner">
+
+                    <div class="course-tag-box">
+                        <a href="#" class="badge-tag orange"><h5>Add to Favorites</h5></a>
+                        <a href="#" class="badge-tag blue"><h5>Add to Basket</h5></a>
+                    </div>
+                </div>
+
+                <div class="course-content">
+
+                    <h3 class="card-title">
+                        <a href="#">Memphis: A Novel</a>
+                    </h3>
+
+                    <div class="wrapper border-bottom">
+
+                        <div class="author">
+
+                            <a href="#" class="author-name">Tara M. Stringfellow</a>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="wrapper">
+                        <div class="course-price">$29.90</div>
+
+                        <div class="enrolled">
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-banner">
+                    <img src="./assets/images/fre.jpg" alt="course banner">
+
+                    <div class="course-tag-box">
+                        <a href="#" class="badge-tag orange"><h5>Add to Favorites</h5></a>
+                        <a href="#" class="badge-tag blue"><h5>Add to Basket</h5></a>
+                    </div>
+                </div>
+
+                <div class="course-content">
+
+                    <h3 class="card-title">
+                        <a href="#">French Braid</a>
+                    </h3>
+
+                    <div class="wrapper border-bottom">
+
+                        <div class="author">
+
+                            <a href="#" class="author-name">Anne Tyler</a>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="wrapper">
+                        <div class="course-price">$49.90</div>
+
+                        <div class="enrolled">
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="course-card">
+
+                <div class="course-banner">
+                    <img src="./assets/images/to.jpg" alt="course banner">
+
+                    <div class="course-tag-box">
+                        <a href="#" class="badge-tag orange"><h5>Add to Favorites</h5></a>
+                        <a href="#" class="badge-tag blue"><h5>Add to Basket</h5></a>
+                    </div>
+                </div>
+
+                <div class="course-content">
+
+                    <h3 class="card-title">
+                        <a href="#">The Tobacco Wives</a>
+                    </h3>
+
+                    <div class="wrapper border-bottom">
+
+                        <div class="author">
+
+                            <a href="#" class="author-name">Adele Myers</a>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="wrapper">
+                        <div class="course-price">$89.00</div>
+
+                        <div class="enrolled">
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="course-card">
+
+                <div class="course-banner">
+                    <img src="./assets/images/port.jpg" alt="course banner">
+
+                    <div class="course-tag-box">
+                        <a href="#" class="badge-tag orange"><h5>Add to Favorites</h5></a>
+                        <a href="#" class="badge-tag blue"><h5>Add to Basket</h5></a>
+                    </div>
+                </div>
+
+                <div class="course-content">
+
+                    <h3 class="card-title">
+                        <a href="#">Portrait of an Unknown Lady</a>
+                    </h3>
+
+                    <div class="wrapper border-bottom">
+
+                        <div class="author">
+
+
+                            <a href="#" class="author-name">Maria Gainza</a>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="wrapper">
+                        <div class="course-price">$199.00</div>
+
+                        <div class="enrolled">
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="btn btn-primary">
+            <p class="btn-text"><a th:href="@{/search}" style="color: #ffff;">SEARCH</a></p>
+            <span class="square"></span>
+        </button>
+
+    </section>
+
+
+
+
+
+
+
+
+    <!--
+      - #FEATURES SECTION
+    -->
+
+    <section class="features">
+
+        <div class="features-left">
+
+            <p class="section-subtitle">Core Features</p>
+
+            <h2 class="section-title">See What Our Mission Are</h2>
+
+            <ul>
+
+                <li class="features-item">
+                    <div class="item-icon-box blue">
+                        <img src="./assets/images/feature-icon-1.png" alt="feature icon">
+                    </div>
+
+                    <div class="wrapper">
+
+                        <h3 class="item-title">Your Life</h3>
+
+                        <p class="item-text">To love reading is to exchange hours of boredom, inevitable in life, for hours of great pleasure.</p>
+
+                    </div>
+                </li>
+
+                <li class="features-item">
+                    <div class="item-icon-box pink">
+                        <img src="./assets/images/feature-icon-2.png" alt="feature icon">
+                    </div>
+
+                    <div class="wrapper">
+
+                        <h3 class="item-title">Best Online Bookstore</h3>
+
+                        <p class="item-text">Your favorite books are always in stock.</p>
+
+                    </div>
+                </li>
+
+                <li class="features-item">
+                    <div class="item-icon-box purple">
+                        <img src="./assets/images/feature-icon-3.png" alt="feature icon">
+                    </div>
+
+                    <div class="wrapper">
+
+                        <h3 class="item-title">24x7 Program</h3>
+
+                        <p class="item-text">We will answer you at any time of the day or night.</p>
+
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="features-right">
+            <img src="./assets/images/bbb.jpg" alt="core features image">
+        </div>
+
+    </section>
+
+
+
+
+
+    <!--
+      - #INSTRUCTOR SECTION
+    -->
+
+    <section class="instructor">
+
+
+        <h2 class="section-title">Notable Writers</h2>
+
+        <div class="instructor-grid">
+
+            <div class="instructor-card">
+
+                <div class="instructor-img-box">
+                    <img src="./assets/images/ava.jpg" width="220" height="300" alt="instructor louis sullivan">
+
+
+                </div>
+
+                <h4 class="instructor-name">Gillian Flynn</h4>
+
+                <p class="instructor-title">Gillian Schieber Flynn is an American writer.
+                    Flynn has published three novels, Sharp Objects,
+                    Dark Places, and Gone Girl, all three of which have been adapted for film or television.</p>
+
+            </div>
+
+            <div class="instructor-card">
+
+                <div class="instructor-img-box">
+                    <img src="./assets/images/av.jpg" width="220" height="300" alt="instructor camden david">
+
+
+                </div>
+
+                <h4 class="instructor-name">Erich Segal</h4>
+
+                <p class="instructor-title"> Erich Wolf Segal was an American author, screenwriter, educator,
+                    and classicist. He was best known for writing the bestselling novel
+                    Love Story (1970) and the hit motion picture of the same name.</p>
+
+            </div>
+
+            <div class="instructor-card">
+
+                <div class="instructor-img-box">
+                    <img src="./assets/images/s.jpg" width="220" height="300" alt="instructor fiona dean">
+
+
+                </div>
+
+                <h4 class="instructor-name">Stephen King</h4>
+
+                <p class="instructor-title">Described as
+                    the "King of Horror",  a play on his surname and a reference to
+                    his high standing in pop culture, his books have sold more than
+                    350 million copies,
+                    and many have been adapted into films, television series, and comics.</p>
+
+            </div>
+
+            <div class="instructor-card">
+
+                <div class="instructor-img-box">
+                    <img src="./assets/images/w.jpg" width="220" height="300" alt="instructor cherish sosa">
+
+
+                </div>
+
+                <h4 class="instructor-name">William Wordsworth</h4>
+
+                <p class="instructor-title">William Wordsworth was one of the founders of English Romanticism. He is remembered as a poet of spiritual and epistemological speculation, and a fierce advocate of using the vocabulary and speech patterns of common people in poetry.  </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+
+
+    <!--
+      - #BLOG
+    -->
+
+    <section class="blog" id="blog">
+
+        <p class="section-subtitle">Our Blog</p>
+
+        <h2 class="section-title">Your Favorite Characters</h2>
+
+        <div class="blog-grid">
+
+            <div class="blog-card">
+
+                <div class="blog-banner-box">
+                    <img src="./assets/images/d.jpg" alt="blog banner">
+                </div>
+
+                <div class="blog-content">
+
+                    <h3 class="blog-title">
+                        <a href="#">Happiness can be found even in the darkest of times,
+                            if one only remembers to turn on the light.</a>
+                    </h3>
+
+                    <a style="color: #050e38;">Albus Dumbledore</a>
+
+                </div>
+
+            </div>
+
+            <div class="blog-card">
+
+                <div class="blog-banner-box">
+                    <img src="./assets/images/l.jpg" alt="blog banner">
+                </div>
+
+                <div class="blog-content">
+
+                    <h3 class="blog-title">
+                        <a href="#">Curtsey while you're thinking what to say. It saves time.</a>
+                    </h3>
+
+                    <a style="color: #050e38;">Lewis Carroll</a>
+
+                </div>
+
+            </div>
+
+            <div class="blog-card">
+
+                <div class="blog-banner-box">
+                    <img src="./assets/images/45.jpg" alt="blog banner">
+                </div>
+
+                <div class="blog-content">
+
+                    <h3 class="blog-title">
+                        <a href="#">When a doctor commits a crime, he is more dangerous than all other criminals. He has strong nerves and great knowledge.</a>
+                    </h3>
+
+                    <a style="color: #050e38;">Sherlock Holmes</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <!--
+      - #CONTACT
+    -->
+
+    <section class="contact">
+
+        <div class="contact-card" id="contact">
+            <img src="./assets/images/cta-bg-img.png" alt="shape" class="contact-card-bg">
+
+            <h2>Start your best online book shopping with us</h2>
+
+            <button class="btn btn-primary">
+                <p class="btn-text"><a href="profile.html" style="color: #ffff;">My Account</a></p>
+                <span class="square"></span>
+            </button>
+        </div>
+
+    </section>
+
+</main>
+
 </html>

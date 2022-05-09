@@ -41,11 +41,11 @@ public class HomeController {
         return "about";
     }
 
-    /*@GetMapping(value = "/log-in-sign-up")
+    @GetMapping(value = "/search")
     public String index_2(Model model) {
         model.addAttribute("currentUser", getUserData());
-        return "log-in-sign-up";
-    }*/
+        return "search";
+    }
 
     @PostMapping(value = "/additem")
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MODERATOR')")
