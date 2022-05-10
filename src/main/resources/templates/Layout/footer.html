@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org"
+      xmlns:sec = "http://www.thymeleaf.org/extras/spring-security">
+
+
+<section class="contact">
+
+    <div class="contact-card" id="contact">
+        <img src="./assets/images/cta-bg-img.png" alt="shape" class="contact-card-bg">
+
+        <h2>Start your best online book shopping with us</h2>
+
+        <a th:href="@{/profile}" class="btn btn-primary">
+            <button>
+                <p class="btn-text" style="color: #ffff;">My Account</p>
+                <span class="square"></span>
+            </button></a>
+    </div>
+
+</section>
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div class="grid-item">
+
+            <div class="footer-logo">
+                <div class="logo" style="color: #ff531a;">
+                    <h2>BOOKTOWN</h2>
+                </div>
+            </div>
+
+
+
+            <div class="social-link">
+                <a href="#">
+                    <ion-icon name="call-outline"></ion-icon>
+                </a>
+                <p style="color: aliceblue;">+7(707)110 57 09</p>
+            </div>
+
+            <div class="social-link">
+                <a href="#">
+                    <ion-icon name="mail-outline"></ion-icon>
+                </a>
+                <p style="color: #d2dafe;">pirates@gmail.com</p>
+            </div>
+
+
+        </div>
+
+        <ul class="grid-item">
+
+            <h4 class="item-heading">Our Link</h4>
+
+            <li class="list-item">
+                <a th:href="@{/}">Home</a>
+            </li>
+
+            <li class="list-item">
+                <a href="#about">About Us</a>
+            </li>
+
+            <li class="list-item">
+                <a href="#course">Books</a>
+            </li>
+
+            <li class="list-item">
+                <a href="#blog">Blog</a>
+            </li>
+
+            <li class="list-item">
+                <a href="#contact">Information</a>
+            </li>
+
+        </ul>
+
+        <ul class="grid-item">
+
+            <h4 class="item-heading">Other Link</h4>
+
+            <li class="list-item">
+                <a th:href="@{/search}">Search</a>
+            </li>
+
+            <li class="list-item">
+                <a th:href="@{/basket}">Basket</a>
+            </li>
+
+            <li class="list-item">
+                <a th:href="@{/fav}">Favorite</a>
+            </li>
+
+        </ul>
+
+        <!--class="back-to-top d-flex align-items-center justify-content-center"-->
+        <a href="#" class="back-to-top">
+            <div class="GoUp">
+                <span class="GoUpS">Go Up!</span>
+            </div>
+        </a>
+
+
+
+    </div>
+
+    <p class="copyright">
+        Copyright © 2022 <a th:href="@{'https://github.com/Beksi-hub/BookTownVersion2.git'}" target="_blank">pirates</a>. All rights reserved.
+    </p>
+
+</footer>
+
+</html>

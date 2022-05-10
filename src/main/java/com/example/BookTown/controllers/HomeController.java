@@ -35,10 +35,10 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping(value = "/about")
+    @GetMapping(value = "/basket")
     public String about(Model model) {
         model.addAttribute("currentUser", getUserData());
-        return "about";
+        return "basket";
     }
 
     @GetMapping(value = "/search")
@@ -115,6 +115,12 @@ public class HomeController {
     public String accessDenied(Model model) {
         model.addAttribute("currentUser", getUserData());
         return "403";
+    }
+
+    @GetMapping(value = "/fav")
+    public String fav(Model model) {
+        model.addAttribute("currentUser", getUserData());
+        return "fav";
     }
 
     @GetMapping(value = "/login")

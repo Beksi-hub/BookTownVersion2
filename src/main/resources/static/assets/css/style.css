@@ -46,6 +46,26 @@ button {
   cursor: pointer;
 }
 
+.GoUp{
+  height: 43px;
+  width: 86px;
+  color: white;
+  background-color: #FF531A;
+  border: 2px;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 23px;
+}
+.GoUpS {
+  justify-content: center;
+  text-align: center;
+}
+
+.GoUp:hover{
+  background-color: #0062FF;
+}
+
 html {
   font-family: "Jost", sans-serif;
   scroll-behavior: smooth;

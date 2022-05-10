@@ -1,10 +1,64 @@
 <html xmlns:th = "http://www.thymeleaf.org"
       xmlns:layout = "http://ultraq.net.nz/thymeleaf/layout" layout:decorator = "layout/main.html">
-<div layout:fragment = "site_content">
+<!--<div layout:fragment = "site_content">
     <div class="row mt-5">
         <div class="col-12">
             <h3 class="display-1 text-center">Welcome <span th:text="${currentUser.fullName}"></span></h3>
         </div>
     </div>
+</div>-->
+
+<head>
+    <link th:href="@{'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'}" rel="stylesheet">
+    <link th:href="@{/assets/css/profile.css}" rel="stylesheet">
+    <script th:src="@{/assets/js/script.js}"></script>
+
+    <script type="module" th:src="@{'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'}"></script>
+    <script nomodule th:src="@{'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'}"></script>
+</head>
+
+
+<div class="container">
+
+    <div class="wrapper">
+        <div class="profile-card js-profile-card">
+            <div class="profile-card__img">
+                <img src="./img1/pirates.png" alt="profile">
+            </div>
+            <div class="profile-card__cnt js-profile-cnt">
+                <div class="profile-card__name">Pirates</div>
+                <div class="profile-card__txt">pirates@gmail.com</strong></div>
+                <div class="profile-card-loc">
+
+                </div>
+
+
+
+
+                <div class="profile-card-ctr">
+                    <button class="profile-card__button button--blue js-message-btn"><a href="basket.html" style="color: #ffff;">Basket</a></button>
+                    <button class="profile-card__button button--orange">Favorites</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <section class="contact">
+
+        <div class="contact-card" id="contact">
+            <img src="./assets/images/cta-bg-img.png" alt="shape" class="contact-card-bg">
+
+            <h2>Start your best online book shopping with us</h2>
+
+            <button class="btn btn-primary">
+                <p class="btn-text"> <a href="profile.html" style="color: #ffff;">My Account</a></p>
+                <span class="square"></span>
+            </button>
+        </div>
+
+    </section>
+
 </div>
+
 </html>
