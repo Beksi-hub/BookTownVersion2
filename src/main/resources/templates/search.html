@@ -45,174 +45,7 @@
 
         <div class="course-grid">
 
-            <div class="course-card">
-
-                <div class="course-banner">
-                    <img src="./assets/images/sea.jpg" alt="course banner">
-
-                    <div class="course-tag-box">
-                        <a href="#" class="badge-tag orange"><h5>Add to Favorites</h5></a>
-                        <a href="#" class="badge-tag blue"><h5>Add to Basket</h5></a>
-                    </div>
-                </div>
-
-                <div class="course-content">
-
-                    <h3 class="card-title">
-                        <a href="#">Sea of Tranquility</a>
-                    </h3>
-
-                    <div class="wrapper border-bottom">
-
-                        <div class="author">
-
-                            <a href="#" class="author-name">Emily St. John Mandel <a>The award-winning, best-selling author of Station Eleven and The Glass Hotel returns with a novel of art, time, love, and plague that takes the reader from Vancouver Island in 1912 to a dark colony on the moon three hundred years later, unfurling a story of humanity across centuries and space.</a></a>
-
-                        </div>
-
-
-                    </div>
-
-                    <div class="wrapper">
-                        <div class="course-price">$50.00</div>
-
-                        <div class="enrolled">
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="course-card">
-
-                <div class="course-banner">
-                    <img src="./assets/images/one.jpg" alt="course banner">
-
-                    <div class="course-tag-box">
-                        <a href="#" class="badge-tag orange"><h5>Add to Favorites</h5></a>
-                        <a href="#" class="badge-tag blue"><h5>Add to Basket</h5></a>
-                    </div>
-                </div>
-
-                <div class="course-content">
-
-                    <h3 class="card-title">
-                        <a href="#">One Italian Summer</a>
-                    </h3>
-
-                    <div class="wrapper border-bottom">
-
-                        <div class="author">
-
-                            <a href="#" class="author-name">Rebecca Serle</a>
-                        </div>
-
-
-
-                    </div>
-
-                    <div class="wrapper">
-                        <div class="course-price">$80.00</div>
-
-                        <div class="enrolled">
-
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="course-card">
-
-                <div class="course-banner">
-                    <img src="./assets/images/mem.jpg" alt="course banner">
-
-                    <div class="course-tag-box">
-                        <a href="#" class="badge-tag orange"><h5>Add to Favorites</h5></a>
-                        <a href="#" class="badge-tag blue"><h5>Add to Basket</h5></a>
-                    </div>
-                </div>
-
-                <div class="course-content">
-
-                    <h3 class="card-title">
-                        <a href="#">Memphis: A Novel</a>
-                    </h3>
-
-                    <div class="wrapper border-bottom">
-
-                        <div class="author">
-
-                            <a href="#" class="author-name">Tara M. Stringfellow</a>
-                        </div>
-
-
-
-                    </div>
-
-                    <div class="wrapper">
-                        <div class="course-price">$29.90</div>
-
-                        <div class="enrolled">
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="course-card">
-
-                <div class="course-banner">
-                    <img src="./assets/images/fre.jpg" alt="course banner">
-
-                    <div class="course-tag-box">
-                        <a href="#" class="badge-tag orange"><h5>Add to Favorites</h5></a>
-                        <a href="#" class="badge-tag blue"><h5>Add to Basket</h5></a>
-                    </div>
-                </div>
-
-                <div class="course-content">
-
-                    <h3 class="card-title">
-                        <a href="#">French Braid</a>
-                    </h3>
-
-                    <div class="wrapper border-bottom">
-
-                        <div class="author">
-
-                            <a href="#" class="author-name">Anne Tyler</a>
-                        </div>
-
-
-
-                    </div>
-
-                    <div class="wrapper">
-                        <div class="course-price">$49.90</div>
-
-                        <div class="enrolled">
-
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="course-card">
+            <div class="course-card" th:each="it : ${tovary}">
 
                 <div class="course-banner">
                     <img src="./assets/images/to.jpg" alt="course banner">
@@ -226,25 +59,25 @@
                 <div class="course-content">
 
                     <h3 class="card-title">
-                        <a href="#">The Tobacco Wives</a>
+                        <a href="#" th:text="${it.name}"></a>
                     </h3>
 
                     <div class="wrapper border-bottom">
 
                         <div class="author">
 
-                            <a href="#" class="author-name">Adele Myers</a>
-                        </div>
+                            <a href="#" class="author-name" th:text="${it.avtor}"></a>
+                            <a th:text="${it.descp}"></a>
 
+                        </div>
 
 
                     </div>
 
                     <div class="wrapper">
-                        <div class="course-price">$89.00</div>
+                        <div class="course-price" th:text="${it.price}"></div>
 
                         <div class="enrolled">
-
 
                         </div>
                     </div>
@@ -254,47 +87,6 @@
             </div>
 
 
-            <div class="course-card">
-
-                <div class="course-banner">
-                    <img src="./assets/images/port.jpg" alt="course banner">
-
-                    <div class="course-tag-box">
-                        <a href="#" class="badge-tag orange"><h5>Add to Favorites</h5></a>
-                        <a href="#" class="badge-tag blue"><h5>Add to Basket</h5></a>
-                    </div>
-                </div>
-
-                <div class="course-content">
-
-                    <h3 class="card-title">
-                        <a href="#">Portrait of an Unknown Lady</a>
-                    </h3>
-
-                    <div class="wrapper border-bottom">
-
-                        <div class="author">
-
-
-                            <a href="#" class="author-name">Maria Gainza</a>
-                        </div>
-
-
-
-                    </div>
-
-                    <div class="wrapper">
-                        <div class="course-price">$199.00</div>
-
-                        <div class="enrolled">
-
-
-                        </div>
-                    </div>
-
-                </div>
-
-            </div>
 
         </div>
 

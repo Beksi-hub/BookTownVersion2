@@ -90,13 +90,31 @@
         <li class="nav-item">
             <a href="#contact">Information</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" th:href="@{'/additem'}"
+               sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_MODERATOR')">Add Book</a>
+        </li>
 
     </ul>
 
-    <button class="btn btn-primary">
-        <p class="btn-text"><a th:href="@{/register}" style="color: #ffff">Sign in</a></p>
+    <a th:href="@{/register}" style="color: #ffff" sec:authorize="isAnonymous()">
+        <button class="btn btn-primary">
+            <p class="btn-text">Sign in</p>
+            <span class="square"></span>
+        </button>
+    </a>
+
+
+    <button class="btn btn-primary" sec:authorize="isAuthenticated() "onclick="document.getElementById('logoutFormId').submit()" href="JavaScript:void(0)">
+        <p class="btn-text">Logout</p>
         <span class="square"></span>
     </button>
+
+    <form th:action="@{'/logout'}" method="post" id="logoutFormId" sec:authorize="isAuthenticated()">
+
+    </form>
+
+
 
     <button class="nav-toggle-btn">
         <span class="one"></span>

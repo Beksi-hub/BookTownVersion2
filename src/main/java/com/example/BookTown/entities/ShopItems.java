@@ -27,5 +27,11 @@ public class ShopItems {
     @Column(name = "amount")
     private int amount;
 
+    @Column(name = "avtor")
+    private String avtor;
+
+    @Column(name = "descp")
+    private String descp;
+
 }
 

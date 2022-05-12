@@ -44,6 +44,10 @@ public class HomeController {
     @GetMapping(value = "/search")
     public String index_2(Model model) {
         model.addAttribute("currentUser", getUserData());
+
+        List<ShopItems> items = itemService.getAllItems();
+        model.addAttribute("tovary", items);
+
         return "search";
     }
 
@@ -51,8 +55,10 @@ public class HomeController {
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_MODERATOR')")
     public String addItem(@RequestParam(name = "item_name", defaultValue = "No Item") String name,
                           @RequestParam(name = "item_price", defaultValue = "0") int price,
-                          @RequestParam(name = "item_amount", defaultValue = "0") int amount) {
-        itemService.addItem(new ShopItems(null, name, price, amount));
+                          @RequestParam(name = "item_amount", defaultValue = "0") int amount,
+                          @RequestParam(name = "item_avtor", defaultValue = "No Avtor") String avtor,
+                          @RequestParam(name = "item_descp", defaultValue = "No Description") String descp) {
+        itemService.addItem(new ShopItems(null, name, price, amount, avtor, descp));
 
         return "redirect:/";
     }
@@ -83,13 +89,17 @@ public class HomeController {
     public String saveItem(@RequestParam(name = "id", defaultValue = "0") Long id,
                            @RequestParam(name = "item_name", defaultValue = "No Item") String name,
                            @RequestParam(name = "item_price", defaultValue = "0") int price,
-                           @RequestParam(name = "item_amount", defaultValue = "0") int amount) {
+                           @RequestParam(name = "item_amount", defaultValue = "0") int amount,
+                           @RequestParam(name = "item_avtor", defaultValue = "No Avtor") String avtor,
+                           @RequestParam(name = "item_descp", defaultValue = "No Description") String descp) {
 
         ShopItems item = itemService.getItem(id);
         if (item != null) {
             item.setName(name);
             item.setAmount(amount);
             item.setPrice(price);
+            item.setAvtor(avtor);
+            item.setDescp(descp);
             itemService.saveItem(item);
         }
 

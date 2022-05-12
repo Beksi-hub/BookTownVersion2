@@ -1,15 +1,31 @@
 <html xmlns:th = "http://www.thymeleaf.org"
-      xmlns:layout = "http://ultraq.net.nz/thymeleaf/layout" layout:decorator = "layout/main.html">
-<div layout:fragment = "site_content">
-    <div class="row mt-5">
-        <div class="col-6 offset-3">
-            <h3 class="display-1 text-center">Add Item</h3>
+      xmlns:layout = "http://ultraq.net.nz/thymeleaf/layout" >
 
-            <form th:action="@{'/additem'}" method="post">
+<head>
+    <link th:href="@{'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css'}" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body>
+
+<div class="row mt-5">
+    <div class="col-6 offset-3">
+        <h3 class="display-1 text-center">Add Item</h3>
+
+        <form th:action="@{'/additem'}" method="post">
                 <div class="form-group">
                     <label th:text = "#{label.name}">
                     </label>
                     <input type="text" class="form-control" name="item_name">
+                </div>
+                <div class="form-group">
+                    <label th:text = "#{label.avtor}">
+                    </label>
+                    <input type="text" class="form-control" name="item_avtor">
+                </div>
+                <div class="form-group">
+                    <label th:text = "#{label.descp}">
+                    </label>
+                    <input type="text" class="form-control" name="item_descp">
                 </div>
 
                 <div class="form-group">
@@ -27,9 +43,68 @@
                 <div class="form-group" style="margin-top: 10px;">
                     <button class="btn btn-success" th:text = "#{button.add}"></button>
                 </div>
+
+            </form>
+    </div>
+
+    <a th:href="@{/}" style="align-items: center" class="text-center">
+        <div class="form-group" style="margin-top: 10px;">
+            <button class="btn btn-warning" th:text = "#{label.home}"></button>
+        </div>
+    </a>
+    <a th:href="@{/search}" style="align-items: center" class="text-center">
+        <div class="form-group" style="margin-top: 10px;">
+            <button class="btn btn-warning" th:text = "#{label.search}"></button>
+        </div>
+    </a>
+</div>
+
+
+<script th:src="@{'https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js'}" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script th:src="@{'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js'}" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+
+<!--head>
+    <link rel="stylesheet" th:href="@{/css3/style.css}" />
+</head>
+
+<body>
+
+        <div class="signin-signup">
+
+            <form th:action="@{'/additem'}" method="post" class="sign-up-form">
+                <h2 class="title">Add book</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Author" name="item_avtor" required/>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-book"></i>
+                    <input type="text" placeholder="Book name" name="item_name" required/>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-text-width"></i>
+                    <input type="text" placeholder="Description" name="item_descp" required/>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-usd"></i>
+                    <input type="text" placeholder="Price" name="item_price" required/>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-snowflake-o"></i>
+                    <input type="text" placeholder="Amount" name="item_amount" required/>
+                </div>
+                <input type="submit" class="btn" value="Add" />
+
             </form>
 
         </div>
-    </div>
-</div>
+
+<script th:src="@{'https://kit.fontawesome.com/64d58efce2.js'}"
+        crossorigin="anonymous"></script>
+<script th:src="@{/js3/app.js}"></script>
+</body>-->
+
+
+
 </html>
