@@ -9,29 +9,16 @@
     <link th:href="@{'https://fonts.googleapis.com/css?family=Source+Sans+3:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic'}"
             rel="stylesheet" />
 
-
-    <script th:src="@{/assets/js/script.js}"></script>
-
-    <!--
-      - ionicon link
-    -->
-    <script type="module" th:src="@{'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'}"></script>
-    <script nomodule th:src="@{'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'}"></script>
-
-
-    <!--
-      - ionicon link
-    -->
-    <script type="module" th:src="@{'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'}"></script>
-    <script nomodule th:src="@{'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'}"></script>
 </head>
+
+<body>
 
 <div class="container" layout:fragment = "site_content">
 
     <div class="wrapper1">
         <div class="search-input">
-            <a href="" target="_blank" hidden></a>
-            <input type="text" placeholder="Type to search">
+            <!--<a href="" target="_blank" hidden></a>-->
+            <input type="text" placeholder="Type to search" id="booktown_search">
             <div class="autocom-box">
                 <!-- here list are inserted from javascript -->
             </div>
@@ -41,10 +28,7 @@
 
     <section class="course" id="course">
 
-
-
         <div class="course-grid">
-
             <div class="course-card" th:each="it : ${tovary}">
 
                 <div class="course-banner">
@@ -81,18 +65,42 @@
 
                         </div>
                     </div>
+                    <a th:href="@{'/details/' + ${it.id}}" style="align-items: center; " class="text-center">
+                        <div class="form-group"
+                             style="margin-top: 10px; color: black; background-color: #0062FF; border-radius: 5px;">
+                            <button class="btn btn-warning text-center">DETAILS</button>
+                        </div>
+                    </a>
 
                 </div>
 
+
             </div>
-
-
-
         </div>
-
 
     </section>
 
-  </div>
+
+</div>
+
+
+
+
+<script th:src="@{/assets/js/script.js}"></script>
+<script th:src="@{/assets/js/search.js}"></script>
+
+<!--
+  - ionicon link
+-->
+<script type="module" th:src="@{'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'}"></script>
+<script nomodule th:src="@{'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'}"></script>
+
+
+<!--
+  - ionicon link
+-->
+<script type="module" th:src="@{'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'}"></script>
+<script nomodule th:src="@{'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'}"></script>
+</body>
 
 </html>

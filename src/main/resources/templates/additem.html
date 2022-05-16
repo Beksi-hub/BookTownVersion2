@@ -47,16 +47,18 @@
             </form>
     </div>
 
-    <a th:href="@{/}" style="align-items: center" class="text-center">
-        <div class="form-group" style="margin-top: 10px;">
-            <button class="btn btn-warning" th:text = "#{label.home}"></button>
-        </div>
-    </a>
-    <a th:href="@{/search}" style="align-items: center" class="text-center">
-        <div class="form-group" style="margin-top: 10px;">
-            <button class="btn btn-warning" th:text = "#{label.search}"></button>
-        </div>
-    </a>
+    <div style="display: inline-block">
+        <a th:href="@{/}" style="align-items: center;" class="text-center">
+            <div class="form-group" style="margin-top: 10px;">
+                <button class="btn btn-warning" th:text = "#{label.home}"></button>
+            </div>
+        </a>
+        <a th:href="@{/search}" style="align-items: center" class="text-center">
+            <div class="form-group" style="margin-top: 10px;">
+                <button class="btn btn-warning" th:text = "#{label.search}"></button>
+            </div>
+        </a>
+    </div>
 </div>
 
 

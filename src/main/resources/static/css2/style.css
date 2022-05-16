@@ -13,6 +13,10 @@
   background: #664AFF;
 }
 
+.course-card.hide{
+  display: none;
+}
+
 .wrapper1{
   max-width: 450px;
   margin: 150px auto;

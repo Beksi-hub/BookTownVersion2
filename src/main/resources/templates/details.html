@@ -1,7 +1,14 @@
-<html xmlns:th = "http://www.thymeleaf.org"
-      xmlns:layout = "http://ultraq.net.nz/thymeleaf/layout" layout:decorator = "layout/main.html"
+<!--<html xmlns:th = "http://www.thymeleaf.org"
+      xmlns:layout = "http://ultraq.net.nz/thymeleaf/layout"
       xmlns:sec = "http://www.thymeleaf.org/extras/spring-security">
-    <!--<div layout:fragment = "site_content">
+
+<head>
+    <link th:href="@{'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css'}" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script th:src="@{'https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js'}" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script th:src="@{'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js'}" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</head>
+
+<body>
             <div class="row mt-5">
                 <div class="col-6 offset-3">
                         <div class="form-group">
@@ -28,15 +35,11 @@
                         </div>
                 </div>
             </div>
-    </div>-->
 
-    <body>
 
-    <div class="container" layout:fragment = 'site_content'>
+    &lt;!&ndash;<div class="container" layout:fragment = 'site_content'>
 
         <section class="course" id="course">
-
-
 
             <div class="course-grid">
 
@@ -46,7 +49,7 @@
                         <img src="./assets/images/sea.jpg" alt="course banner">
 
                         <div class="course-tag-box">
-
+                            <a href="#" class="badge-tag orange"><h5>Add to Favorites</h5></a>
                             <a href="#" class="badge-tag blue"><h5>Add to Basket</h5></a>
                         </div>
                     </div>
@@ -54,17 +57,15 @@
                     <div class="course-content">
 
                         <h3 class="card-title">
-                            <a href="#">Sea of Tranquility</a>
+                            <a href="#" th:text="${it.name}"></a>
                         </h3>
 
                         <div class="wrapper border-bottom">
 
                             <div class="author">
 
-                                <a>Emily St. John Mandel</a>
-
-
-                                <p>The award-winning, best-selling author of Station Eleven and The Glass Hotel returns with a novel of art, time, love, and plague that takes the reader from Vancouver Island in 1912 to a dark colony on the moon three hundred years later, unfurling a story of humanity across centuries and space.</p>
+                                <a href="#" class="author-name" th:text="${it.avtor}"></a>
+                                <a>The award-winning, best-selling author of Station Eleven and The Glass Hotel returns with a novel of art, time, love, and plague that takes the reader from Vancouver Island in 1912 to a dark colony on the moon three hundred years later, unfurling a story of humanity across centuries and space.</a>
 
                             </div>
 
@@ -84,23 +85,133 @@
                 </div>
 
 
-
-
             </div>
 
 
         </section>
 
+    </div>&ndash;&gt;
+
+
+</body>
+
+</html>-->
+
+
+<html xmlns:th = "http://www.thymeleaf.org"
+      xmlns:layout = "http://ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec = "http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <link th:href="@{'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css'}" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body style="overflow-x: hidden">
+
+<div class="row mt-5">
+    <div class="col-6 offset-3">
+        <h3 class="display-1 text-center">Detail book</h3><br>
+
+        <div class="form-group">
+            <label th:text = "#{label.name}">
+            </label>
+            <input type="text" class="form-control" th:value="${item!=null?item.name:''}">
+        </div><br>
+
+        <div class="form-group">
+            <label th:text = "#{label.avtor}">
+            </label>
+            <input type="text" class="form-control" th:value="${item!=null?item.avtor:''}">
+        </div><br>
+
+        <div class="form-group">
+            <label th:text = "#{label.descp}">
+            </label>
+            <input type="text" class="form-control" th:value="${item!=null?item.descp:''}">
+        </div><br>
+
+        <div class="form-group">
+            <label th:text = "#{label.price}">
+            </label>
+            <input type="number" class="form-control" th:value="${item!=null?item.price:'0'}">
+        </div><br>
+
+        <div class="form-group">
+            <label th:text = "#{label.amount}">
+            </label>
+            <input type="number" class="form-control" th:value="${item!=null?item.amount:'0'}">
+        </div><br>
+
+        <a th:href="@{'/edititem/'+${item.id}}"
+           sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_MODERATOR')">
+            <div class="form-group" style="margin-top: 10px;">
+                <button class="btn btn-success">Edit</button>
+            </div>
+        </a>
     </div>
 
-    <script th:src="@{/assets/js/script.js}"></script>
 
-    <script type="module" th:src="@{'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'}"></script>
-    <script nomodule th:src="@{'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'}"></script>
+    <a th:href="@{/}" style="align-items: center;" class="text-center">
+        <div class="form-group" style="margin-top: 10px;">
+            <button class="btn btn-warning" th:text = "#{label.home}"></button>
+        </div>
+    </a>
+    <a th:href="@{/search}" style="align-items: center;" class="text-center">
+        <div class="form-group" style="margin-top: 10px;">
+            <button class="btn btn-warning" th:text = "#{label.search}"></button>
+        </div>
+    </a>
 
 
-    <script type="module" th:src="@{'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js'}"></script>
-    <script nomodule th:src="@{'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js'}"></script>
-    </body>
+</div>
+
+
+<script th:src="@{'https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js'}" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script th:src="@{'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js'}" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
+
+<!--head>
+    <link rel="stylesheet" th:href="@{/css3/style.css}" />
+</head>
+
+<body>
+
+        <div class="signin-signup">
+
+            <form th:action="@{'/additem'}" method="post" class="sign-up-form">
+                <h2 class="title">Add book</h2>
+                <div class="input-field">
+                    <i class="fas fa-user"></i>
+                    <input type="text" placeholder="Author" name="item_avtor" required/>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-book"></i>
+                    <input type="text" placeholder="Book name" name="item_name" required/>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-text-width"></i>
+                    <input type="text" placeholder="Description" name="item_descp" required/>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-usd"></i>
+                    <input type="text" placeholder="Price" name="item_price" required/>
+                </div>
+                <div class="input-field">
+                    <i class="fas fa-snowflake-o"></i>
+                    <input type="text" placeholder="Amount" name="item_amount" required/>
+                </div>
+                <input type="submit" class="btn" value="Add" />
+
+            </form>
+
+        </div>
+
+<script th:src="@{'https://kit.fontawesome.com/64d58efce2.js'}"
+        crossorigin="anonymous"></script>
+<script th:src="@{/js3/app.js}"></script>
+</body>-->
+
+
 
 </html>
+

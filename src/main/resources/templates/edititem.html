@@ -1,28 +1,45 @@
 <html xmlns:th = "http://www.thymeleaf.org"
-      xmlns:layout = "http://ultraq.net.nz/thymeleaf/layout" layout:decorator = "layout/main.html">
-<div layout:fragment = "site_content">
+      xmlns:layout = "http://ultraq.net.nz/thymeleaf/layout">
+<head>
+    <link th:href="@{'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css'}" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+
+<div>
     <div class="row mt-5">
         <div class="col-6 offset-3">
             <form th:action="@{'/saveitem'}" method="post">
                 <input type="hidden" name="id" th:value="${item.id}">
 
                 <div class="form-group">
-                    <label th:text="#{label.name}">
+                    <label th:text = "#{label.name}">
                     </label>
-                    <input type="text" class="form-control" name="item_name" th:value="${item!=null?item.name:''}">
-                </div>
+                    <input type="text" name="item_name" class="form-control" th:value="${item!=null?item.name:''}">
+                </div><br>
 
                 <div class="form-group">
-                    <label th:text="#{label.price}">
+                    <label th:text = "#{label.avtor}">
                     </label>
-                    <input type="number" class="form-control" name="item_price" value="0" max="10000000" min="0" th:value="${item!=null?item.price:'0'}">
-                </div>
+                    <input type="text" name="item_avtor" class="form-control" th:value="${item!=null?item.avtor:''}">
+                </div><br>
 
                 <div class="form-group">
-                    <label th:text="#{label.amount}">
+                    <label th:text = "#{label.descp}">
                     </label>
-                    <input type="number" class="form-control" name="item_amount" value="0" max="1000000" min="0" th:value="${item!=null?item.amount:'0'}">
-                </div>
+                    <input type="text" name="item_descp" class="form-control" th:value="${item!=null?item.descp:''}">
+                </div><br>
+
+                <div class="form-group">
+                    <label th:text = "#{label.price}">
+                    </label>
+                    <input type="number" name="item_price" class="form-control" th:value="${item!=null?item.price:'0'}">
+                </div><br>
+
+                <div class="form-group">
+                    <label th:text = "#{label.amount}">
+                    </label>
+                    <input type="number" name="item_amount" class="form-control" th:value="${item!=null?item.amount:'0'}">
+                </div><br>
 
                 <div class="form-group">
                     <button class="btn btn-success">SAVE ITEM</button>
@@ -32,6 +49,17 @@
                     DELETE
                 </button>
             </form>
+
+            <a th:href="@{/}" style="align-items: center;" class="text-center">
+                <div class="form-group" style="margin-top: 10px;">
+                    <button class="btn btn-warning" th:text = "#{label.home}"></button>
+                </div>
+            </a>
+            <a th:href="@{/search}" style="align-items: center;" class="text-center">
+                <div class="form-group" style="margin-top: 10px;">
+                    <button class="btn btn-warning" th:text = "#{label.search}"></button>
+                </div>
+            </a>
 
 
             <!-- Modal -->
@@ -58,4 +86,8 @@
         </div>
     </div>
 </div>
+
+<script th:src="@{'https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js'}" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script th:src="@{'https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js'}" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</body>
 </html>

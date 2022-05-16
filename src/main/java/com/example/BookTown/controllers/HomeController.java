@@ -56,7 +56,7 @@ public class HomeController {
     public String addItem(@RequestParam(name = "item_name", defaultValue = "No Item") String name,
                           @RequestParam(name = "item_price", defaultValue = "0") int price,
                           @RequestParam(name = "item_amount", defaultValue = "0") int amount,
-                          @RequestParam(name = "item_avtor", defaultValue = "No Avtor") String avtor,
+                          @RequestParam(name = "item_avtor", defaultValue = "No Author") String avtor,
                           @RequestParam(name = "item_descp", defaultValue = "No Description") String descp) {
         itemService.addItem(new ShopItems(null, name, price, amount, avtor, descp));
 
@@ -90,7 +90,7 @@ public class HomeController {
                            @RequestParam(name = "item_name", defaultValue = "No Item") String name,
                            @RequestParam(name = "item_price", defaultValue = "0") int price,
                            @RequestParam(name = "item_amount", defaultValue = "0") int amount,
-                           @RequestParam(name = "item_avtor", defaultValue = "No Avtor") String avtor,
+                           @RequestParam(name = "item_avtor", defaultValue = "No Author") String avtor,
                            @RequestParam(name = "item_descp", defaultValue = "No Description") String descp) {
 
         ShopItems item = itemService.getItem(id);
@@ -130,6 +130,10 @@ public class HomeController {
     @GetMapping(value = "/fav")
     public String fav(Model model) {
         model.addAttribute("currentUser", getUserData());
+
+        List<ShopItems> items = itemService.getAllItems();
+        model.addAttribute("tovary", items);
+
         return "fav";
     }
 
